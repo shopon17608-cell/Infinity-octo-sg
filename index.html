@@ -1,0 +1,367 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#070b14">
+  <meta name="description" content="Welcome to the personal website of Shopon Ahmed.">
+  <title>Shopon Ahmed | Infinity</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #070b14;
+      color: #f4f7ff;
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 7%;
+      background: #0b1020;
+      border-bottom: 1px solid #263650;
+    }
+
+    .logo {
+      font-size: 23px;
+      font-weight: bold;
+      color: #45b7ff;
+    }
+
+    #nav {
+      display: flex;
+      gap: 22px;
+    }
+
+    #nav a:hover {
+      color: #45b7ff;
+    }
+
+    .menu-btn {
+      display: none;
+      color: white;
+      background: #182238;
+      border: 1px solid #394866;
+      border-radius: 8px;
+      padding: 7px 12px;
+      font-size: 20px;
+    }
+
+    .hero {
+      min-height: 85vh;
+      display: flex;
+      align-items: center;
+      padding: 70px 8%;
+      background:
+        radial-gradient(ellipse at 85% 20%, #482477 0%, transparent 40%),
+        radial-gradient(ellipse at 15% 90%, #103b62 0%, transparent 45%),
+        #070b14;
+    }
+
+    .hero-content {
+      max-width: 850px;
+    }
+
+    .tag {
+      color: #45b7ff;
+      letter-spacing: 4px;
+      font-size: 13px;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: clamp(38px, 7vw, 70px);
+      line-height: 1.2;
+      margin: 15px 0;
+    }
+
+    h1 span {
+      color: #45b7ff;
+    }
+
+    .hero h2 {
+      color: #c6a5ff;
+      font-size: clamp(20px, 4vw, 30px);
+    }
+
+    .hero p,
+    section p {
+      color: #a8b2c7;
+      margin: 18px 0 24px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 22px;
+      margin: 5px 8px 5px 0;
+      border-radius: 9px;
+      background: linear-gradient(120deg, #287dff, #9255ff);
+      color: white;
+      font-weight: bold;
+    }
+
+    .btn.secondary {
+      background: transparent;
+      border: 1px solid #45b7ff;
+    }
+
+    section:not(.hero) {
+      padding: 70px 8%;
+    }
+
+    .section-tag {
+      color: #45b7ff;
+      letter-spacing: 3px;
+      font-size: 12px;
+    }
+
+    section h2 {
+      font-size: clamp(28px, 5vw, 40px);
+      margin: 10px 0 22px;
+    }
+
+    .cards,
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .card,
+    .project-card {
+      background: #101827;
+      border: 1px solid #263650;
+      border-radius: 16px;
+      padding: 24px;
+      transition: 0.25s;
+    }
+
+    .card:hover,
+    .project-card:hover {
+      transform: translateY(-5px);
+      border-color: #45b7ff;
+    }
+
+    .card .emoji {
+      font-size: 28px;
+    }
+
+    .card h3,
+    .project-card h3 {
+      color: #45b7ff;
+      margin: 12px 0;
+    }
+
+    .project-card small {
+      color: #b38aff;
+    }
+
+    #contact {
+      background: #0b1020;
+    }
+
+    footer {
+      padding: 25px;
+      text-align: center;
+      color: #a8b2c7;
+      border-top: 1px solid #263650;
+    }
+
+    @media (max-width: 700px) {
+      .navbar {
+        padding: 15px 5%;
+      }
+
+      .menu-btn {
+        display: block;
+      }
+
+      #nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 20px;
+        background: #0b1020;
+        flex-direction: column;
+        gap: 12px;
+        border-bottom: 1px solid #263650;
+      }
+
+      #nav.active {
+        display: flex;
+      }
+
+      .hero {
+        min-height: 75vh;
+        padding: 60px 6%;
+      }
+
+      section:not(.hero) {
+        padding: 50px 6%;
+      }
+
+      .cards,
+      .projects {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="navbar">
+    <a href="#home" class="logo">SHOPON<span> INFINITY</span></a>
+
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+
+    <nav id="nav">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <p class="tag">WELCOME TO MY WORLD</p>
+      <h1>Hi, I'm <span>Shopon Ahmed</span></h1>
+      <h2>Creative Mind. Digital World.</h2>
+
+      <p>
+        Welcome to my personal website. I love technology,
+        computers, gaming and creativity. Explore my world
+        and connect with me online.
+      </p>
+
+      <a class="btn" href="#about">Explore More ↗</a>
+      <a class="btn secondary" href="#contact">Contact Me</a>
+    </div>
+  </section>
+
+  <section id="about">
+    <p class="section-tag">GET TO KNOW ME</p>
+    <h2>About Me</h2>
+    <p>
+      Hello! I'm Shopon Ahmed. I am interested in computers,
+      technology, gaming and digital creativity. This is my
+      personal website where you can learn about me and connect with me.
+    </p>
+  </section>
+
+  <section id="skills">
+    <p class="section-tag">WHAT I DO</p>
+    <h2>My Interests</h2>
+
+    <div class="cards">
+      <div class="card">
+        <div class="emoji">💻</div>
+        <h3>Computer Skills</h3>
+        <p>Computers, software and digital tools.</p>
+      </div>
+
+      <div class="card">
+        <div class="emoji">🎮</div>
+        <h3>Gaming</h3>
+        <p>Gaming, gameplay and gaming content.</p>
+      </div>
+
+      <div class="card">
+        <div class="emoji">✦</div>
+        <h3>Creativity</h3>
+        <p>Creative ideas, design and technology.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <p class="section-tag">MY WORK</p>
+    <h2>My Projects</h2>
+
+    <div class="projects">
+      <div class="project-card">
+        <small>01 / WEBSITE</small>
+        <h3>Personal Website</h3>
+        <p>My own customized website on the internet.</p>
+      </div>
+
+      <div class="project-card">
+        <small>02 / GAMING</small>
+        <h3>Gaming Content</h3>
+        <p>My gaming interests and online activities.</p>
+      </div>
+
+      <div class="project-card">
+        <small>03 / TECHNOLOGY</small>
+        <h3>Computer World</h3>
+        <p>Exploring computers and digital technology.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <p class="section-tag">LET'S CONNECT</p>
+    <h2>Connect With Me</h2>
+
+    <p>
+      Follow me on TikTok or contact me through WhatsApp.
+      I would love to connect with you!
+    </p>
+
+    <a class="btn" href="https://www.tiktok.com/@shopon_ahmed.1"
+       target="_blank" rel="noopener noreferrer">TikTok ↗</a>
+
+    <a class="btn secondary" href="https://wa.me/qr/GYBENV73RBVBG1"
+       target="_blank" rel="noopener noreferrer">WhatsApp ↗</a>
+  </section>
+
+  <footer>
+    <p>© <span id="year"></span> Shopon Ahmed. All rights reserved.</p>
+    <p>SHOPON INFINITY</p>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById("menuBtn");
+    const nav = document.getElementById("nav");
+
+    menuBtn.addEventListener("click", function () {
+      nav.classList.toggle("active");
+    });
+
+    nav.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        nav.classList.remove("active");
+      });
+    });
+
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
+
+</body>
+</html>
+6
